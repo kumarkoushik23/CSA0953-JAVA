@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter the user name: ");
+        String username = scanner.nextLine();
+
+        System.out.println("Reenter the user name: ");
+        String reenteredUsername = scanner.nextLine();
+
+        if (isValid(username) && username.equals(reenteredUsername)) {
+            System.out.println("User name is Valid");
+        } else {
+            System.out.println("User name is Invalid");
+        }
+    }
+
+    public static boolean isValid(String username) {
+        // username validation rules go here
+        // for example, let's assume a valid username is alphanumeric and has a length between 5 and 10
+        return username.matches("^[a-zA-Z0-9]{5,10}$");
+    }
+}
