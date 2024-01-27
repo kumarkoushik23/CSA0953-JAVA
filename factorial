@@ -1,0 +1,15 @@
+public class Main {
+
+    public static void main(String[] args) {
+        int n = 4;
+        System.out.println(n + " Factorial = " + findFactorial(n));
+    }
+
+    public static long findFactorial(int n) {
+        long factorial = 1;
+        for (int i = 1; i <= n; i++) {
+            factorial *= i;
+        }
+        return factorial;
+    }
+}
