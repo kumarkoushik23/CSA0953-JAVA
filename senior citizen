@@ -1,0 +1,18 @@
+def calculate_simple_interest(principal, rate, time):
+    return (principal * rate * time) / 100
+
+def main():
+    principal = int(input("Enter the principal amount: "))
+    rate = int(input("Enter the no of years: "))
+    is_senior_citizen = input("Is customer senior citizen (y/n): ")
+
+    if is_senior_citizen.lower() == 'y':
+        rate = 12
+    else:
+        rate = 10
+
+    interest = calculate_simple_interest(principal, rate, time)
+    print("Interest:", interest)
+
+if __name__ == "__main__":
+    main()
