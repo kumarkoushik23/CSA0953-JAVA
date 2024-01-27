@@ -1,0 +1,13 @@
+def print_rectangle_pattern(symbol, num_rows, num_cols):
+    for i in range(num_rows):
+        for j in range(num_cols):
+            print(symbol, end="")
+        print()
+
+# Get the symbol and dimensions from the user
+symbol = input("Enter a symbol: ")
+num_rows = int(input("Enter the number of rows: "))
+num_cols = int(input("Enter the number of columns: "))
+
+# Print the rectangle pattern
+print_rectangle_pattern(symbol, num_rows, num_cols)
