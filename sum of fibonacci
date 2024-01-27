@@ -1,0 +1,29 @@
+public class Fibonacci {
+    public static void main(String[] args) {
+        int n = 4;
+        int evenSum = findEvenSumOfFibonacci(n);
+        System.out.println("Even Sum: " + evenSum);
+    }
+
+    public static int findEvenSumOfFibonacci(int n) {
+        if (n <= 0) {
+            return 0;
+        }
+
+        int evenSum = 0;
+        int first = 0;
+        int second = 1;
+
+        while (first <= n) {
+            if (first % 2 == 0) {
+                evenSum += first;
+            }
+
+            int next = first + second;
+            first = second;
+            second = next;
+        }
+
+        return evenSum;
+    }
+}
