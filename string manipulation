@@ -1,0 +1,17 @@
+public class StringManipulation {
+    public static void main(String[] args) {
+        String originalString = "Hello, World!";
+
+        // Convert to uppercase
+        String upperCase = originalString.toUpperCase();
+        System.out.println("Uppercase: " + upperCase);
+
+        // Find length
+        int length = originalString.length();
+        System.out.println("Length: " + length);
+
+        // Substring
+        String substring = originalString.substring(0, 5);
+        System.out.println("Substring: " + substring);
+    }
+}
