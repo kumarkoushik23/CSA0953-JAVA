@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number : ");
+        int num = scanner.nextInt();
+        int originalNum, remainder, result = 0;
+
+        originalNum = num;
+
+        while (originalNum != 0) {
+            originalNum /= 10;
+            ++result;
+        }
+
+        originalNum = num;
+
+        while (originalNum > 0) {
+            remainder = originalNum % 10;
+            result -= Math.pow(remainder, result);
+            originalNum /= 10;
+        }
+
+        if (result == 0) {
+            System.out.println("Given number is Armstrong number");
+        } else {
+            System.out.println("Given number is not Armstrong number");
+        }
+    }
+}
