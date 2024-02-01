@@ -1,0 +1,32 @@
+import java.io.*;
+
+class Person implements Serializable {
+    String name;
+    int age;
+
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+public class SerializationExample {
+    public static void main(String[] args) {
+        // Serialization
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("person.ser"))) {
+            Person person = new Person("John", 25);
+            out.writeObject(person);
+            System.out.println("Object serialized successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Deserialization
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("person.ser"))) {
+            Person deserializedPerson = (Person) in.readObject();
+            System.out.println("Object deserialized successfully. Name: " + deserializedPerson.name + ", Age: " + deserializedPerson.age);
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}
