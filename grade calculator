@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class GradeCalculator {
+    public static void main(String[] args) {
+        // Create a Scanner object to take input
+        Scanner scanner = new Scanner(System.in);
+
+        // Input marks for four subjects
+        System.out.print("Enter marks for Subject 1: ");
+        double subject1 = scanner.nextDouble();
+        
+        System.out.print("Enter marks for Subject 2: ");
+        double subject2 = scanner.nextDouble();
+        
+        System.out.print("Enter marks for Subject 3: ");
+        double subject3 = scanner.nextDouble();
+        
+        System.out.print("Enter marks for Subject 4: ");
+        double subject4 = scanner.nextDouble();
+
+        // Calculate total and aggregate
+        double totalMarks = subject1 + subject2 + subject3 + subject4;
+        double aggregatePercentage = totalMarks / 4;
+
+        // Display total and aggregate
+        System.out.println("Total Marks: " + totalMarks);
+        System.out.println("Aggregate Percentage: " + aggregatePercentage + "%");
+
+        // Display the grade obtained by the student
+        String grade = calculateGrade(aggregatePercentage);
+        System.out.println("Grade: " + grade);
+        
+        // Close the scanner to prevent resource leak
+        scanner.close();
+    }
+
+    // Function to calculate grade based on aggregate
+    private static String calculateGrade(double aggregate) {
+        if (aggregate > 75) {
+            return "Distinction";
+        } else if (60 <= aggregate && aggregate < 75) {
+            return "First Division";
+        } else if (50 <= aggregate && aggregate < 60) {
+            return "Second Division";
+        } else if (40 <= aggregate && aggregate < 50) {
+            return "Third Division";
+        } else {
+            return "Fail";
+        }
+    }
+}
