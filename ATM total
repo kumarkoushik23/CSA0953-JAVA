@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the 1st Denomination: ");
+        int denom1 = scanner.nextInt();
+        System.out.println("Enter the 1st Denomination number of notes: ");
+        int notes1 = scanner.nextInt();
+
+        System.out.println("Enter the 2nd Denomination: ");
+        int denom2 = scanner.nextInt();
+        System.out.println("Enter the 2nd Denomination number of notes: ");
+        int notes2 = scanner.nextInt();
+
+        System.out.println("Enter the 3rd Denomination: ");
+        int denom3 = scanner.nextInt();
+        System.out.println("Enter the 3rd Denomination number of notes: ");
+        int notes3 = scanner.nextInt();
+
+        System.out.println("Enter the 4th Denomination: ");
+        int denom4 = scanner.nextInt();
+        System.out.println("Enter the 4th Denomination number of notes: ");
+        int notes4 = scanner.nextInt();
+
+        int totalAvailableBalance = denom1 * notes1 + denom2 * notes2 + denom3 * notes3 + denom4 * notes4;
+        System.out.println("Total Available Balance in ATM: " + totalAvailableBalance);
+    }
+}
