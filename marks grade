@@ -1,0 +1,105 @@
+interface Subject1 {
+    int getSubject1Marks();
+}
+
+interface Subject2 {
+    int getSubject2Marks();
+}
+
+interface Subject3 {
+    int getSubject3Marks();
+}
+
+interface Subject4 {
+    int getSubject4Marks();
+}
+
+interface Subject5 {
+    int getSubject5Marks();
+}
+
+interface Subject6 {
+    int getSubject6Marks();
+}
+
+interface GradeCalculator {
+    default void calculateGrade(int totalMarks) {
+        double aggregate = (double) totalMarks / 6;
+
+        System.out.println("Total Marks: " + totalMarks);
+        System.out.println("Aggregate: " + aggregate);
+
+        if (aggregate > 75) {
+            System.out.println("Grade: Distinction");
+        } else if (aggregate >= 60 && aggregate <= 75) {
+            System.out.println("Grade: First Division");
+        } else if (aggregate >= 50 && aggregate < 60) {
+            System.out.println("Grade: Second Division");
+        } else if (aggregate >= 40 && aggregate < 50) {
+            System.out.println("Grade: Third Division");
+        } else {
+            System.out.println("Grade: FAIL");
+        }
+    }
+}
+
+class Student implements Subject1, Subject2, Subject3, Subject4, Subject5, Subject6, GradeCalculator {
+
+    private int subject1Marks;
+    private int subject2Marks;
+    private int subject3Marks;
+    private int subject4Marks;
+    private int subject5Marks;
+    private int subject6Marks;
+
+    public Student(int subject1Marks, int subject2Marks, int subject3Marks, int subject4Marks, int subject5Marks, int subject6Marks) {
+        this.subject1Marks = subject1Marks;
+        this.subject2Marks = subject2Marks;
+        this.subject3Marks = subject3Marks;
+        this.subject4Marks = subject4Marks;
+        this.subject5Marks = subject5Marks;
+        this.subject6Marks = subject6Marks;
+    }
+
+    @Override
+    public int getSubject1Marks() {
+        return subject1Marks;
+    }
+
+    @Override
+    public int getSubject2Marks() {
+        return subject2Marks;
+    }
+
+    @Override
+    public int getSubject3Marks() {
+        return subject3Marks;
+    }
+
+    @Override
+    public int getSubject4Marks() {
+        return subject4Marks;
+    }
+
+    @Override
+    public int getSubject5Marks() {
+        return subject5Marks;
+    }
+
+    @Override
+    public int getSubject6Marks() {
+        return subject6Marks;
+    }
+}
+
+public class StudentGradeProgram {
+    public static void main(String[] args) {
+        // Example: Creating a student and calculating grades
+        Student student = new Student(80, 70, 90, 85, 60, 75);
+        int totalMarks = student.getSubject1Marks() + student.getSubject2Marks() +
+                         student.getSubject3Marks() + student.getSubject4Marks() +
+                         student.getSubject5Marks() + student.getSubject6Marks();
+
+        student.calculateGrade(totalMarks);
+    }
+}
