@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the given decimal number: ");
+        double decimalNumber = scanner.nextDouble();
+
+        findSquareAndCube(decimalNumber);
+    }
+
+    public static void findSquareAndCube(double decimalNumber) {
+        double squareNumber = Math.pow(decimalNumber, 2);
+        double cubeNumber = Math.pow(decimalNumber, 3);
+
+        System.out.println("Square Number: " + squareNumber);
+        System.out.println("Cube Number: " + cubeNumber);
+    }
+}
