@@ -1,0 +1,19 @@
+import java.util.*;
+class Swap
+{
+   public static void main(String args[])
+    { 
+      int x,y,z;
+      Scanner s=new Scanner(System.in);
+      System.out.println("Enter the values ofx and y");
+      x=s.nextInt();
+      y=s.nextInt();
+      z=x;
+      x=y;
+      y=z;
+      System.out.println("swapped numbers:"+x+""+y);
+      System.out.println();
+}
+}
+
+      
